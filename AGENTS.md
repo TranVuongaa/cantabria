@@ -18,7 +18,7 @@ This version has breaking changes APIs, conventions, and file structure may all 
 
 CANTABRIA collects real news articles from configured sources, analyzes them with AI, stores them in Supabase, and displays reader-friendly sentiment and framing insights.
 
-Build only:
+The default core scope is:
 
 - home page with news cards
 - news details page with full article analysis
@@ -32,7 +32,7 @@ Build only:
 - Vercel Cron for automatic scheduling
 - minimal responsive UI
 
-Do not overbuild.
+And others based on user request.
 
 ---
 
@@ -125,7 +125,7 @@ UI must not scrape, analyze, or mutate pipeline state.
 
 # 6. Tech stack
 
-Use:
+Use this default core stack:
 
 - Next.js
 - Clerk
@@ -141,11 +141,15 @@ Use:
 - pgvector (via Supabase Extensions)
 - Vercel Cron
 
-Do not use:
+An additional technology may be introduced only when an approved expansion genuinely requires it. The implementation prompt must explain its purpose, considered alternatives, operational burden, security impact, and why the core stack is insufficient.
+
+Do not use by default:
 
 - Supabase Auth
 - local JSON app storage
 - a separate backend framework
+
+Replacing one of these default prohibitions requires an explicit user request and an approved architectural migration plan; feature expansion alone does not override them.
 
 ---
 
