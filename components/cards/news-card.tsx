@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { BiasMeter } from "@/components/analysis/bias-meter";
 import { ClockIcon, InfoIcon } from "@/components/icons/icons";
 import { ArticleArtwork } from "@/components/media/article-artwork";
@@ -17,6 +19,7 @@ export function NewsCard({
   confidence,
   excerpt,
   framing,
+  id,
   publishedAt,
   readingTime,
   region,
@@ -28,7 +31,7 @@ export function NewsCard({
   return (
     <article
       id={anchorId}
-      className="group flex h-full scroll-mt-6 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-border bg-surface shadow-[var(--shadow-small)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-medium)]"
+      className="group relative flex h-full scroll-mt-6 flex-col overflow-hidden rounded-[var(--radius-medium)] border border-border bg-surface shadow-[var(--shadow-small)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-medium)] focus-within:ring-2 focus-within:ring-text-primary focus-within:ring-offset-2 focus-within:ring-offset-canvas"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-text-primary">
         <ArticleArtwork variant={artworkVariant} />
@@ -42,7 +45,12 @@ export function NewsCard({
           {topic} <span aria-hidden="true">·</span> {region}
         </p>
         <h2 className="mt-2 text-[16px] leading-[1.35] font-semibold tracking-[-0.025em]">
-          {title}
+          <Link
+            href={`/news/${id}`}
+            className="rounded-[var(--radius-small)] outline-none after:absolute after:inset-0 after:content-['']"
+          >
+            {title}
+          </Link>
         </h2>
         <p className="mt-2 line-clamp-2 text-[10px] leading-[1.6] text-text-secondary">
           {excerpt}
@@ -55,7 +63,7 @@ export function NewsCard({
             {sentiment} sentiment
           </span>
           <span className="rounded-[var(--radius-full)] border border-border bg-canvas px-2 py-1 text-[8px] font-semibold tracking-[0.04em] uppercase">
-            {framing.label} framing
+            {framing.label} bias
           </span>
         </div>
 

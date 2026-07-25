@@ -4,6 +4,7 @@ type BiasMeterProps = {
   compact?: boolean;
   left: number;
   right: number;
+  title?: string;
 };
 
 type NormalizedFraming = {
@@ -52,9 +53,10 @@ export function BiasMeter({
   compact = false,
   left,
   right,
+  title = "AI-estimated bias",
 }: BiasMeterProps) {
   const framing = normalizeFraming(left, center, right);
-  const label = `AI-estimated framing: left ${formatPercentage(
+  const label = `${title}: left ${formatPercentage(
     framing.left,
   )} percent, center ${formatPercentage(
     framing.center,
@@ -67,7 +69,7 @@ export function BiasMeter({
           compact ? "mb-2 text-[9px]" : "mb-3 text-[11px]"
         }`}
       >
-        AI-estimated framing
+        {title}
       </figcaption>
       <div
         className={`flex w-full overflow-hidden rounded-[var(--radius-small)] border border-border ${

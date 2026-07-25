@@ -12,7 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "CANTABRIA",
   description:
-    "Balanced news coverage with clear, AI-powered sentiment and framing analysis.",
+    "Balanced news coverage with clear, AI-powered sentiment and bias analysis.",
 };
 
 export default function RootLayout({

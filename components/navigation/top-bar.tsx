@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navigation = [
-  { href: "#top-stories", label: "Top stories" },
-  { href: "#world", label: "World" },
-  { href: "#technology", label: "Technology" },
-  { href: "#climate", label: "Climate" },
+  { href: "/#top-stories", label: "Top stories" },
+  { href: "/#world", label: "World" },
+  { href: "/#technology", label: "Technology" },
+  { href: "/#climate", label: "Climate" },
 ] as const;
 
 export function TopBar() {
@@ -31,7 +31,7 @@ export function TopBar() {
           className="order-3 -mx-1 mt-2 flex w-[calc(100%+0.5rem)] items-center gap-1 overflow-x-auto px-1 lg:order-none lg:mt-0 lg:w-auto lg:flex-1 lg:justify-center"
         >
           {navigation.map((item, index) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className={[
@@ -40,13 +40,16 @@ export function TopBar() {
               ].join(" ")}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <span className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center rounded-[var(--radius-small)] border border-text-primary bg-text-primary px-4 text-[10px] font-semibold text-surface">
-          Login
-        </span>
+        <Link
+          href="/#analysis-principles"
+          className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center rounded-[var(--radius-small)] border border-text-primary bg-text-primary px-4 text-[10px] font-semibold text-surface transition-colors hover:border-[#494949] hover:bg-[#494949]"
+        >
+          Methodology
+        </Link>
       </div>
     </header>
   );

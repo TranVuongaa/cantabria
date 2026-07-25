@@ -39,7 +39,7 @@ export default function Home() {
                 Top stories
               </h1>
               <p className="mt-3 max-w-xl text-[12px] leading-[1.7] text-text-secondary">
-                Compare sentiment, framing, and confidence before you form a view.
+                Compare sentiment, bias, and confidence before you form a view.
               </p>
             </div>
             <p className="inline-flex w-fit items-center gap-2 rounded-[var(--radius-full)] border border-border bg-surface px-3 py-2 text-[9px] font-medium text-text-secondary">
