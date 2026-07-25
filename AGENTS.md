@@ -117,6 +117,16 @@ Keep these layers separate:
 - Pipeline: scrape and analysis orchestration, log tracking
 - Vector: pgvector similarity queries and article embedding storage
 
+## Component organization
+
+Group reusable UI components by family or responsibility, such as `components/buttons`, `components/cards`, `components/navigation`, `components/layout`, and `components/analysis`.
+
+Do not group components by the page that consumes them, such as a broad `components/news` directory.
+
+Keep non-UI data, fixtures, domain types, queries, and business logic outside `components/` in the appropriate `lib/` module.
+
+Use focused module paths instead of a broad catch-all barrel. Add a new component-family directory only when a distinct reusable responsibility appears; do not create empty placeholder directories.
+
 UI must display stored data only.
 
 UI must not scrape, analyze, or mutate pipeline state.
