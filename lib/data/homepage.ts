@@ -1,4 +1,4 @@
-import type { ArtworkVariant } from "./article-artwork";
+import type { ArtworkVariant } from "@/components/media/article-artwork";
 
 export type SentimentLabel = "Positive" | "Neutral" | "Negative";
 export type FramingLabel = "Left" | "Center" | "Right" | "Mixed" | "Unclear";

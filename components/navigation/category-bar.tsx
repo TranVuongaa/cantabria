@@ -1,4 +1,4 @@
-import { Chip } from "@/components/design-system";
+import { Chip } from "@/components/chips/chip";
 
 type CategoryBarProps = {
   categories: readonly string[];

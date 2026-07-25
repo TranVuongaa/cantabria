@@ -1,6 +1,7 @@
-import { BiasMeter, ClockIcon, InfoIcon } from "@/components/design-system";
-import { ArticleArtwork } from "@/components/news/article-artwork";
-import type { HomepageArticle } from "@/components/news/homepage-data";
+import { BiasMeter } from "@/components/analysis/bias-meter";
+import { ClockIcon, InfoIcon } from "@/components/icons/icons";
+import { ArticleArtwork } from "@/components/media/article-artwork";
+import type { HomepageArticle } from "@/lib/data/homepage";
 
 type NewsCardProps = HomepageArticle;
 

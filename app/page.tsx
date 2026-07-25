@@ -1,11 +1,8 @@
-import { CategoryBar } from "@/components/news/category-bar";
-import {
-  homepageArticles,
-  homepageCategories,
-} from "@/components/news/homepage-data";
-import { NewsCard } from "@/components/news/news-card";
-import { SiteFooter } from "@/components/news/site-footer";
-import { TopBar } from "@/components/news/top-bar";
+import { NewsCard } from "@/components/cards/news-card";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { CategoryBar } from "@/components/navigation/category-bar";
+import { TopBar } from "@/components/navigation/top-bar";
+import { homepageArticles, homepageCategories } from "@/lib/data/homepage";
 
 export default function Home() {
   return (
