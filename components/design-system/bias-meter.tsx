@@ -79,7 +79,7 @@ export function BiasMeter({
           className="flex min-w-0 items-center justify-center bg-framing-left px-1 text-framing-left-text"
           style={{ width: `${framing.left}%` }}
         >
-          {framing.left >= 15 ? (
+          {!compact && framing.left >= 15 ? (
             <span className={compact ? "text-[8px] font-medium" : "text-[9px] font-medium"}>
               Left {formatPercentage(framing.left)}%
             </span>
@@ -89,7 +89,7 @@ export function BiasMeter({
           className="flex min-w-0 items-center justify-center bg-framing-center px-1 text-framing-center-text"
           style={{ width: `${framing.center}%` }}
         >
-          {framing.center >= 15 ? (
+          {!compact && framing.center >= 15 ? (
             <span className={compact ? "text-[8px] font-medium" : "text-[9px] font-medium"}>
               Center {formatPercentage(framing.center)}%
             </span>
@@ -99,7 +99,7 @@ export function BiasMeter({
           className="flex min-w-0 items-center justify-center bg-framing-right px-1 text-framing-right-text"
           style={{ width: `${framing.right}%` }}
         >
-          {framing.right >= 15 ? (
+          {!compact && framing.right >= 15 ? (
             <span className={compact ? "text-[8px] font-medium" : "text-[9px] font-medium"}>
               Right {formatPercentage(framing.right)}%
             </span>
