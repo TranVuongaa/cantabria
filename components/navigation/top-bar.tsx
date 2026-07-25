@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { AuthControls } from "@/components/auth/auth-controls";
+
 const navigation = [
   { href: "/#top-stories", label: "Top stories" },
   { href: "/#world", label: "World" },
@@ -10,7 +12,7 @@ const navigation = [
 export function TopBar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface shadow-[var(--shadow-small)]">
-      <div className="mx-auto flex min-h-[72px] w-full max-w-[1200px] flex-wrap items-center gap-x-8 px-4 py-3 sm:px-6 lg:flex-nowrap">
+      <div className="mx-auto flex min-h-[72px] w-full max-w-[1200px] flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 sm:px-6 lg:flex-nowrap lg:gap-x-6">
         <Link
           href="/"
           className="inline-flex min-h-11 shrink-0 items-center gap-3 rounded-[var(--radius-small)]"
@@ -28,7 +30,7 @@ export function TopBar() {
 
         <nav
           aria-label="Primary navigation"
-          className="order-3 -mx-1 mt-2 flex w-[calc(100%+0.5rem)] items-center gap-1 overflow-x-auto px-1 lg:order-none lg:mt-0 lg:w-auto lg:flex-1 lg:justify-center"
+          className="order-3 -mx-1 flex w-[calc(100%+0.5rem)] items-center gap-1 overflow-x-auto px-1 lg:order-none lg:w-auto lg:flex-1 lg:justify-center"
         >
           {navigation.map((item, index) => (
             <Link
@@ -44,12 +46,15 @@ export function TopBar() {
           ))}
         </nav>
 
-        <Link
-          href="/#analysis-principles"
-          className="ml-auto inline-flex min-h-11 shrink-0 items-center justify-center rounded-[var(--radius-small)] border border-text-primary bg-text-primary px-4 text-[10px] font-semibold text-surface transition-colors hover:border-[#494949] hover:bg-[#494949]"
-        >
-          Methodology
-        </Link>
+        <div className="order-2 ml-auto flex max-w-full flex-wrap items-center justify-end gap-2 lg:order-none">
+          <Link
+            href="/#analysis-principles"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-[var(--radius-small)] border border-border bg-surface px-3 text-[10px] font-semibold text-text-primary transition-colors hover:bg-canvas"
+          >
+            Methodology
+          </Link>
+          <AuthControls />
+        </div>
       </div>
     </header>
   );
